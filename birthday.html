@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Welcome, October Girl 🌸</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="birthday-page">
+
+  <!-- =========================
+       BACKGROUND
+  ========================== -->
+
+  <div class="sky"></div>
+
+  <div class="moon"></div>
+
+  <!-- Live Fireworks -->
+  <canvas id="fireworks"></canvas>
+
+  <!-- Floating petals -->
+  <div
+    class="petals"
+    aria-hidden="true"
+  ></div>
+
+
+  <!-- =========================
+       BIRTHDAY MUSIC
+  ========================== -->
+
+  <audio id="birthdayMusic" loop preload="auto">
+    <source src="music/Full of Joy.wav" type="audio/mpeg">
+    Your browser does not support audio.
+  </audio>
+
+
+  <!-- Music button -->
+  <button
+    id="musicControl"
+    class="music-control"
+    type="button"
+    aria-label="Play birthday music"
+  >
+    🎵 Music
+  </button>
+
+
+  <!-- =========================
+       MAIN CONTENT
+  ========================== -->
+
+  <main class="celebration">
+
+    <!-- Big CSS Flower -->
+
+    <div class="hero-flower">
+
+      <div class="flower-center"></div>
+
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+
+    </div>
+
+
+    <p class="eyebrow">
+      02 · October
+    </p>
+
+
+    <h1>
+      Happy Birthday,
+      <br>
+
+      <span>
+        October Girl.
+      </span>
+
+    </h1>
+
+
+    <div class="divider">
+      <span>✿</span>
+    </div>
+
+
+    <!-- =========================
+         BIRTHDAY MESSAGE
+    ========================== -->
+
+    <article class="letter">
+
+      <p>
+        Ohh, it’s October again. Almost touching winter.
+        October and November always make us eagerly wait
+        for the winter to come.
+      </p>
+
+      <p>
+        These months remind me of foggy winter mornings—
+        morning tea, newspapers, and morning walks.
+      </p>
+
+      <p>
+        I think you’re blessed to have been born in a month like this.
+      </p>
+
+      <p>
+        As far as I know and can guess, you’re a very raw
+        and genuine person. There’s no double intention in
+        the way you speak or behave. You say things directly,
+        and honestly, that’s something I find really cute.
+        Always be like this.
+      </p>
+
+      <p>
+        I’m not going to simply say,
+        “Hey, Happy Birthday!” or write the usual birthday
+        wishes and bla bla bla. 😄
+        Instead, I just want to say that I genuinely
+        appreciate you, and on your birthday,
+        I’ll keep you in my prayers.
+      </p>
+
+      <p>
+        You love flowers so much, so I hope one day
+        you’ll have a big garden full of flowers,
+        InshaAllah. 🌸
+      </p>
+
+      <p>
+        And, of course, there will be rabbits playing
+        around in that garden too—including the big rabbit,
+        Momo. 🐇
+      </p>
+
+      <p>
+        May this new year of your life bring you peaceful
+        mornings, beautiful moments, sincere people,
+        and all the little things that make you genuinely happy.
+        May Allah keep you blessed, protect your smile,
+        and give you many reasons to smile in the days ahead.
+      </p>
+
+      <p class="final-wish">
+        Happy Birthday. 🤍
+      </p>
+
+      <p class="signature">
+        Welcome, October girl. 🌸
+      </p>
+
+    </article>
+
+
+    <!-- =========================
+         GARDEN
+    ========================== -->
+
+    <div class="garden">
+
+      <div class="stem stem-a"></div>
+      <div class="stem stem-b"></div>
+      <div class="stem stem-c"></div>
+
+
+      <div class="bloom bloom-a">
+        <b></b>
+      </div>
+
+      <div class="bloom bloom-b">
+        <b></b>
+      </div>
+
+      <div class="bloom bloom-c">
+        <b></b>
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

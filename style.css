@@ -1,0 +1,1430 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+
+/* =========================================================
+   BIRTHDAY GATE PAGE
+========================================================= */
+
+.gate-page {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 30px;
+
+  position: relative;
+  overflow: hidden;
+
+  color: #fff;
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(244, 180, 180, 0.14),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(180, 160, 220, 0.12),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #100d1c,
+      #17152a,
+      #241b31
+    );
+}
+
+
+/* =========================================================
+   AMBIENT LIGHT
+========================================================= */
+
+.ambient {
+  position: absolute;
+
+  width: 400px;
+  height: 400px;
+
+  border-radius: 50%;
+
+  filter: blur(100px);
+
+  pointer-events: none;
+}
+
+.ambient-one {
+  top: -180px;
+  left: -150px;
+
+  background: rgba(235, 145, 175, 0.16);
+}
+
+.ambient-two {
+  bottom: -200px;
+  right: -150px;
+
+  background: rgba(150, 130, 220, 0.15);
+}
+
+
+/* =========================================================
+   GATE CARD
+========================================================= */
+
+.gate-card {
+  position: relative;
+  z-index: 5;
+
+  width: min(520px, 100%);
+
+  padding: 45px 40px;
+
+  text-align: center;
+
+  border-radius: 30px;
+
+  border: 1px solid rgba(255, 255, 255, 0.13);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.11),
+      rgba(255,255,255,.035)
+    );
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  box-shadow:
+    0 30px 100px rgba(0, 0, 0, .45);
+
+  animation: cardAppear 1s ease;
+}
+
+@keyframes cardAppear {
+
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+}
+
+
+/* =========================================================
+   FLOWER ICON
+========================================================= */
+
+.tiny-flower {
+  font-size: 42px;
+
+  color: #f3b1be;
+
+  margin-bottom: 15px;
+
+  text-shadow:
+    0 0 20px rgba(243, 177, 190, .6);
+
+  animation: flowerPulse 3s ease-in-out infinite;
+}
+
+@keyframes flowerPulse {
+
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.12);
+  }
+
+}
+
+
+/* =========================================================
+   TYPOGRAPHY
+========================================================= */
+
+.eyebrow {
+  font-size: 12px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 3px;
+
+  color: #e8c687;
+
+  margin-bottom: 15px;
+}
+
+.gate-card h1 {
+  font-family: "DM Serif Display", serif;
+
+  font-size: clamp(42px, 8vw, 62px);
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  color: #fff5eb;
+
+  margin-bottom: 20px;
+}
+
+.intro {
+  color: #cfc8d2;
+
+  line-height: 1.8;
+
+  font-size: 15px;
+
+  margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+#birthdayForm {
+  text-align: left;
+}
+
+#birthdayForm label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  margin-top: 18px;
+
+  color: #eee5eb;
+
+  font-size: 14px;
+
+  font-weight: 500;
+}
+
+#birthdayForm input {
+  width: 100%;
+
+  padding: 15px 16px;
+
+  border-radius: 12px;
+
+  border: 1px solid rgba(255,255,255,.15);
+
+  outline: none;
+
+  background: rgba(0,0,0,.18);
+
+  color: white;
+
+  font-size: 15px;
+
+  transition: .3s ease;
+}
+
+#birthdayForm input::placeholder {
+  color: #85808d;
+}
+
+#birthdayForm input:focus {
+  border-color: #e7a9b9;
+
+  box-shadow:
+    0 0 0 3px rgba(231,169,185,.1),
+    0 0 25px rgba(231,169,185,.12);
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+#birthdayForm button {
+  width: 100%;
+
+  margin-top: 25px;
+
+  padding: 15px;
+
+  border: none;
+
+  border-radius: 50px;
+
+  cursor: pointer;
+
+  color: #261925;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f3b1be,
+      #f0d99a
+    );
+
+  box-shadow:
+    0 10px 30px rgba(239, 170, 190, .2);
+
+  transition: .3s ease;
+}
+
+#birthdayForm button:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 15px 40px rgba(239,170,190,.35);
+}
+
+#birthdayForm button:active {
+  transform: scale(.97);
+}
+
+
+/* =========================================================
+   HINT
+========================================================= */
+
+.hint {
+  min-height: 25px;
+
+  margin-top: 15px;
+
+  color: #f1b6bd;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   LITTLE NOTE
+========================================================= */
+
+.little-note {
+  margin-top: 30px;
+
+  padding-top: 20px;
+
+  border-top:
+    1px solid rgba(255,255,255,.08);
+
+  color: #8f8995;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   SHAKE
+========================================================= */
+
+.shake {
+  animation: shake .4s ease;
+}
+
+@keyframes shake {
+
+  0%, 100% {
+    transform: translateX(0);
+  }
+
+  20% {
+    transform: translateX(-8px);
+  }
+
+  40% {
+    transform: translateX(8px);
+  }
+
+  60% {
+    transform: translateX(-6px);
+  }
+
+  80% {
+    transform: translateX(6px);
+  }
+
+}
+
+
+/* =========================================================
+   BIRTHDAY PAGE
+========================================================= */
+
+.birthday-page {
+  min-height: 100vh;
+
+  position: relative;
+
+  overflow-x: hidden;
+
+  color: white;
+
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(255, 190, 150, .12),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 15% 35%,
+      rgba(150, 120, 190, .12),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 85% 45%,
+      rgba(220, 140, 160, .10),
+      transparent 25%
+    ),
+    linear-gradient(
+      180deg,
+      #090914 0%,
+      #111326 25%,
+      #211b35 55%,
+      #39233d 78%,
+      #101a1b 100%
+    );
+}
+
+
+/* =========================================================
+   SKY
+========================================================= */
+
+.sky {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 0;
+
+  pointer-events: none;
+
+  overflow: hidden;
+}
+
+
+/* stars */
+
+.sky::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background-image:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,.9) 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle,
+      rgba(255,230,190,.7) 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle,
+      rgba(210,220,255,.6) 1px,
+      transparent 1.5px
+    );
+
+  background-size:
+    90px 90px,
+    140px 140px,
+    190px 190px;
+
+  background-position:
+    10px 20px,
+    50px 80px,
+    100px 20px;
+
+  opacity: .5;
+
+  animation: starMove 20s linear infinite;
+}
+
+@keyframes starMove {
+
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(20px);
+  }
+
+}
+
+
+/* moon glow */
+
+.sky::after {
+  content: "";
+
+  position: absolute;
+
+  width: 320px;
+  height: 320px;
+
+  right: 3%;
+  top: 3%;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,239,210,.22),
+      rgba(255,239,210,.05) 40%,
+      transparent 70%
+    );
+
+  filter: blur(10px);
+}
+
+
+/* =========================================================
+   MOON
+========================================================= */
+
+.moon {
+  position: fixed;
+
+  width: 115px;
+  height: 115px;
+
+  right: 11%;
+  top: 8%;
+
+  z-index: 1;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #fffef1,
+      #f6e9c9
+    );
+
+  box-shadow:
+    0 0 25px #fff5d9,
+    0 0 70px rgba(255,235,190,.35);
+}
+
+.moon::after {
+  content: "";
+
+  position: absolute;
+
+  width: 110px;
+  height: 110px;
+
+  left: 35px;
+  top: -10px;
+
+  border-radius: 50%;
+
+  background: #090914;
+}
+
+
+/* =========================================================
+   FIREWORK CANVAS
+========================================================= */
+
+#fireworks {
+  position: fixed;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 3;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   CELEBRATION CONTENT
+========================================================= */
+
+.celebration {
+  position: relative;
+
+  z-index: 5;
+
+  width: min(820px, calc(100% - 30px));
+
+  margin: auto;
+
+  padding:
+    90px
+    0
+    280px;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   HERO FLOWER
+========================================================= */
+
+.hero-flower {
+  position: relative;
+
+  width: 120px;
+  height: 120px;
+
+  margin:
+    0 auto 30px;
+
+  animation:
+    flowerFloat
+    5s
+    ease-in-out
+    infinite;
+}
+
+.hero-flower i {
+  position: absolute;
+
+  width: 48px;
+  height: 70px;
+
+  left: 36px;
+  top: 25px;
+
+  border-radius:
+    50% 50% 45% 45%;
+
+  background:
+    radial-gradient(
+      circle at 30% 25%,
+      #ffe2e7,
+      #db8495 55%,
+      #8b465d
+    );
+
+  transform-origin:
+    24px 35px;
+
+  box-shadow:
+    0 0 25px rgba(255,130,160,.25);
+}
+
+.hero-flower i:nth-of-type(1) {
+  transform: rotate(0deg);
+}
+
+.hero-flower i:nth-of-type(2) {
+  transform: rotate(45deg);
+}
+
+.hero-flower i:nth-of-type(3) {
+  transform: rotate(90deg);
+}
+
+.hero-flower i:nth-of-type(4) {
+  transform: rotate(135deg);
+}
+
+.hero-flower i:nth-of-type(5) {
+  transform: rotate(180deg);
+}
+
+.hero-flower i:nth-of-type(6) {
+  transform: rotate(225deg);
+}
+
+.hero-flower i:nth-of-type(7) {
+  transform: rotate(270deg);
+}
+
+.hero-flower i:nth-of-type(8) {
+  transform: rotate(315deg);
+}
+
+.flower-center {
+  position: absolute;
+
+  z-index: 10;
+
+  width: 34px;
+  height: 34px;
+
+  left: 43px;
+  top: 43px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #fff2ad,
+      #e7b958 60%,
+      #a56b2e
+    );
+
+  box-shadow:
+    0 0 35px rgba(255,213,112,.75);
+}
+
+@keyframes flowerFloat {
+
+  0%, 100% {
+    transform:
+      translateY(0)
+      rotate(-2deg);
+  }
+
+  50% {
+    transform:
+      translateY(-12px)
+      rotate(3deg);
+  }
+
+}
+
+
+/* =========================================================
+   BIRTHDAY HEADING
+========================================================= */
+
+.celebration h1 {
+  font-family:
+    "DM Serif Display",
+    serif;
+
+  color: #fff8ed;
+
+  font-size:
+    clamp(45px, 8vw, 78px);
+
+  line-height: .95;
+
+  text-shadow:
+    0 0 20px rgba(255,210,180,.15),
+    0 5px 40px rgba(0,0,0,.5);
+}
+
+.celebration h1 span {
+  color: #f4bbc5;
+
+  text-shadow:
+    0 0 25px rgba(244,150,170,.25);
+}
+
+.celebration > .eyebrow {
+  margin-bottom: 15px;
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.divider {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 15px;
+
+  margin: 35px auto;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+
+  width: 100px;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,.3)
+    );
+}
+
+.divider::after {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.3),
+      transparent
+    );
+}
+
+.divider span {
+  color: #eac681;
+
+  font-size: 22px;
+}
+
+
+/* =========================================================
+   LETTER
+========================================================= */
+
+.letter {
+  position: relative;
+
+  width: min(680px, 100%);
+
+  margin: 40px auto;
+
+  padding: 42px;
+
+  border:
+    1px solid rgba(255,255,255,.13);
+
+  border-radius: 30px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.10),
+      rgba(255,255,255,.035)
+    );
+
+  backdrop-filter: blur(15px);
+
+  -webkit-backdrop-filter: blur(15px);
+
+  box-shadow:
+    0 30px 100px rgba(0,0,0,.35);
+
+  color: #f8ede8;
+
+  text-align: left;
+
+  line-height: 1.9;
+
+  font-size: 15px;
+}
+
+.letter p {
+  margin-bottom: 22px;
+}
+
+.final-wish {
+  text-align: center;
+
+  font-family:
+    "DM Serif Display",
+    serif;
+
+  font-size: 36px;
+
+  color: #ffe4e5;
+
+  margin-top: 35px;
+}
+
+.signature {
+  text-align: center;
+
+  color: #edc88d;
+}
+
+
+/* =========================================================
+   PETALS
+========================================================= */
+
+.petals {
+  position: fixed;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+  z-index: 4;
+}
+
+.petal {
+  position: absolute;
+
+  top: -40px;
+
+  width: 10px;
+  height: 16px;
+
+  border-radius:
+    100% 0 100% 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffd0d9,
+      #c86f83
+    );
+
+  opacity: .75;
+
+  filter:
+    drop-shadow(
+      0 0 6px
+      rgba(255,150,180,.3)
+    );
+
+  animation:
+    petalFall
+    linear
+    infinite;
+}
+
+@keyframes petalFall {
+
+  0% {
+    transform:
+      translate3d(0,-50px,0)
+      rotate(0deg);
+  }
+
+  25% {
+    transform:
+      translate3d(40px,25vh,0)
+      rotate(90deg);
+  }
+
+  50% {
+    transform:
+      translate3d(-30px,50vh,0)
+      rotate(180deg);
+  }
+
+  75% {
+    transform:
+      translate3d(50px,75vh,0)
+      rotate(270deg);
+  }
+
+  100% {
+    transform:
+      translate3d(-30px,110vh,0)
+      rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   GARDEN
+========================================================= */
+
+.garden {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  bottom: 0;
+
+  height: 260px;
+
+  z-index: 6;
+
+  pointer-events: none;
+}
+
+.garden::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: 0;
+
+  left: 0;
+  right: 0;
+
+  height: 90px;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent,
+      rgba(6,18,15,.95)
+    );
+}
+
+
+/* =========================================================
+   STEMS
+========================================================= */
+
+.stem {
+  position: absolute;
+
+  bottom: 45px;
+
+  width: 7px;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #294f3a,
+      #75a36e,
+      #294f3a
+    );
+
+  transform-origin: bottom;
+}
+
+.stem::before,
+.stem::after {
+  content: "";
+
+  position: absolute;
+
+  width: 55px;
+  height: 24px;
+
+  border-radius: 100% 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      #5c9165,
+      #244a36
+    );
+}
+
+.stem-a {
+  left: 18%;
+  height: 190px;
+  transform: rotate(-8deg);
+}
+
+.stem-a::before {
+  left: -45px;
+  top: 70px;
+  transform: rotate(-25deg);
+}
+
+.stem-a::after {
+  right: -45px;
+  top: 105px;
+  transform: rotate(25deg) scaleX(-1);
+}
+
+.stem-b {
+  left: 50%;
+  height: 220px;
+  transform: translateX(-50%) rotate(3deg);
+}
+
+.stem-b::before {
+  left: -48px;
+  top: 90px;
+  transform: rotate(-25deg);
+}
+
+.stem-b::after {
+  right: -48px;
+  top: 120px;
+  transform: rotate(25deg) scaleX(-1);
+}
+
+.stem-c {
+  right: 18%;
+  height: 165px;
+  transform: rotate(8deg);
+}
+
+.stem-c::before {
+  left: -45px;
+  top: 65px;
+  transform: rotate(-25deg);
+}
+
+.stem-c::after {
+  right: -45px;
+  top: 100px;
+  transform: rotate(25deg) scaleX(-1);
+}
+
+
+/* =========================================================
+   BLOOMS
+========================================================= */
+
+.bloom {
+  position: absolute;
+
+  width: 100px;
+  height: 100px;
+
+  z-index: 8;
+
+  animation:
+    bloomOpen
+    2s
+    ease-out
+    both;
+}
+
+.bloom::before,
+.bloom::after,
+.bloom b::before,
+.bloom b::after {
+  content: "";
+
+  position: absolute;
+
+  width: 58px;
+  height: 82px;
+
+  left: 21px;
+  top: 9px;
+
+  border-radius:
+    50% 50% 45% 45%;
+
+  background:
+    radial-gradient(
+      circle at 30% 20%,
+      #ffdce3,
+      #d8788b 55%,
+      #75384d
+    );
+
+  transform-origin:
+    29px 41px;
+
+  box-shadow:
+    0 0 25px rgba(255,125,160,.2);
+}
+
+.bloom::before {
+  transform: rotate(0deg);
+}
+
+.bloom::after {
+  transform: rotate(90deg);
+}
+
+.bloom b::before {
+  transform: rotate(45deg);
+}
+
+.bloom b::after {
+  transform: rotate(135deg);
+}
+
+.bloom b {
+  position: absolute;
+
+  z-index: 10;
+
+  width: 30px;
+  height: 30px;
+
+  left: 35px;
+  top: 35px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      #fff0a6,
+      #e5ad45
+    );
+
+  box-shadow:
+    0 0 30px rgba(255,207,94,.6);
+}
+
+.bloom-a {
+  left: calc(18% - 45px);
+  bottom: 220px;
+  transform: scale(.9);
+}
+
+.bloom-b {
+  left: calc(50% - 50px);
+  bottom: 250px;
+  transform: scale(1.15);
+  animation-delay: .5s;
+}
+
+.bloom-c {
+  right: calc(18% - 45px);
+  bottom: 195px;
+  transform: scale(.75);
+  animation-delay: 1s;
+}
+
+@keyframes bloomOpen {
+
+  0% {
+    opacity: 0;
+    transform:
+      scale(0)
+      rotate(-30deg);
+  }
+
+  70% {
+    transform:
+      scale(1.08)
+      rotate(5deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform:
+      scale(1)
+      rotate(0deg);
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .gate-page {
+    padding: 18px;
+  }
+
+  .gate-card {
+    padding: 35px 22px;
+  }
+
+  .celebration {
+    padding:
+      60px
+      0
+      260px;
+  }
+
+  .celebration h1 {
+    font-size: 50px;
+  }
+
+  .letter {
+    padding: 28px 22px;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+  }
+
+  .moon {
+    width: 75px;
+    height: 75px;
+
+    right: 7%;
+    top: 5%;
+  }
+
+  .moon::after {
+    width: 72px;
+    height: 72px;
+
+    left: 25px;
+  }
+
+  .garden {
+    height: 220px;
+  }
+
+  .stem-a {
+    left: 8%;
+  }
+
+  .stem-c {
+    right: 8%;
+  }
+
+  .bloom-a {
+    left: 3%;
+  }
+
+  .bloom-c {
+    right: 3%;
+  }
+
+}
+
+
+@media (max-width: 450px) {
+
+  .celebration h1 {
+    font-size: 42px;
+  }
+
+  .hero-flower {
+    transform: scale(.8);
+    margin-bottom: 10px;
+  }
+
+  .letter {
+    padding: 24px 18px;
+  }
+
+  .final-wish {
+    font-size: 30px;
+  }
+
+}
+
+/* =========================================================
+   MUSIC CONTROL
+========================================================= */
+
+.music-control {
+
+    position: fixed;
+
+    top: 22px;
+    right: 22px;
+
+    z-index: 1000;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    background: rgba(20, 20, 40, 0.55);
+
+    backdrop-filter: blur(12px);
+
+    -webkit-backdrop-filter: blur(12px);
+
+    color: #ffffff;
+
+    padding: 11px 18px;
+
+    border-radius: 999px;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.25);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+
+}
+
+
+.music-control:hover {
+
+    transform: translateY(-2px);
+
+    background: rgba(40, 40, 70, 0.75);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.35);
+
+}
+
+
+.music-control.playing {
+
+    animation: musicGlow 2s ease-in-out infinite;
+
+}
+
+
+@keyframes musicGlow {
+
+    0%,
+    100% {
+
+        box-shadow:
+            0 0 0 rgba(255, 255, 255, 0);
+
+    }
+
+    50% {
+
+        box-shadow:
+            0 0 22px rgba(255, 255, 255, 0.25);
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE MUSIC BUTTON
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .music-control {
+
+        top: 15px;
+        right: 15px;
+
+        padding: 9px 14px;
+
+        font-size: 12px;
+
+    }
+
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>A Little Birthday Gate 🐇</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="gate-page">
+
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <main class="gate-card">
+
+    <div class="tiny-flower">✿</div>
+
+    
+
+    <h1>
+      Before you enter…
+    </h1>
+
+    <p class="intro">
+      There is a very important question.
+      And yes, I made this unnecessarily complicated just for you. 😌
+    </p>
+
+    <form id="birthdayForm" autocomplete="off">
+
+      <label for="name">
+        What is your name Maam?
+      </label>
+
+      <input
+        id="name"
+        name="name"
+        type="text"
+        placeholder="Type your name..."
+        required
+      >
+
+      <label for="buses">
+        How many buses have you counted so far(As I asked you to do so instead of sing the phone)?
+      </label>
+
+      <input
+        id="buses"
+        name="buses"
+        type="number"
+        min="0"
+        placeholder="A completely serious question..."
+        required
+      >
+
+      <button type="submit">
+        Let me check ✨
+      </button>
+
+      <p id="hint" class="hint" aria-live="polite"></p>
+
+    </form>
+
+    <div class="little-note">
+      P.S. I have a feeling your name isn't exactly what you think it is. 🐇
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
